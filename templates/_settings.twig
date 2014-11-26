@@ -1,0 +1,30 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+        label: "Auth Token"|t,
+        id: 'piwikTokenAuth',
+        name: 'piwikTokenAuth',
+        instructions: "Token auth key for the Piwik API. You can find it in the Piwik cp at username > API"|t,
+        value: settings.piwikTokenAuth,
+        errors: settings.getErrors('piwikTokenAuth')
+    })
+}}
+
+{{ forms.textField({
+        label: "Site Url"|t,
+        id: 'piwikSiteUrl',
+        name: 'piwikSiteUrl',
+        instructions: "Url that is tracking your data"|t,
+        value: settings.piwikSiteUrl,
+        errors: settings.getErrors('piwikSiteUrl')
+    })
+}}
+
+{{ forms.textField({
+        label: "Site ID"|t,
+        id: 'piwikSiteId',
+        name: 'piwikSiteId',
+        value: settings.piwikSiteId,
+        errors: settings.getErrors('piwikSiteId')
+    })
+}}
